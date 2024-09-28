@@ -1,4 +1,5 @@
 pyproject.toml
+src/aiohttp/extras/__init__.py
 src/aiohttp_extras.egg-info/PKG-INFO
 src/aiohttp_extras.egg-info/SOURCES.txt
 src/aiohttp_extras.egg-info/dependency_links.txt
