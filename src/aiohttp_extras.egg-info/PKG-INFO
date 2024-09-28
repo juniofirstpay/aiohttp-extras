@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: aiohttp-extras
-Version: 0.0.11
+Version: 0.0.1
 Summary: Falcon Contribution project
 Author-email: Nirbhay Gupta <nirbhay.gupta@junio.in>
 Classifier: Programming Language :: Python :: 3

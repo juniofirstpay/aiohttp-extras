@@ -8,7 +8,7 @@ include = ["aiohttp.extras"]
 
 [project]
 name = "aiohttp-extras"
-version = "0.0.11"
+version = "0.0.1"
 authors = [
   { name="Nirbhay Gupta", email="nirbhay.gupta@junio.in" },
 ]
