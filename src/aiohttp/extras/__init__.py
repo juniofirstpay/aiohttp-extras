@@ -35,10 +35,15 @@ class HTTPSessions:
 
     def __init__(self):
         self.__session_mapping: Dict[str, aiohttp.ClientSession] = dict()
+        self.__session_config_mapping: Dict[str, HTTPSessionConfig] = dict()
 
-    async def configure(self, config: HTTPSessionConfig):
-        client_session = await configure_session(config.base_url, config.dns_cache, config.conn_limit)
-        self.__session_mapping[config.name] = client_session
+    def add(self, config: HTTPSessionConfig):
+        self.__session_config_mapping[config.name] = config
+    
+    async def configure(self):
+        for name, config in self.__session_config_mapping.items():
+            client_session = await configure_session(config.base_url, config.dns_cache, config.conn_limit)
+            self.__session_mapping[name] = client_session
     
     def require(self, name: str) -> Callable:
         def delayed_wrapper(async_callable: AsyncCallable) -> AsyncCallable:
