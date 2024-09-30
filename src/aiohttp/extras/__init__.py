@@ -16,7 +16,7 @@ async def configure_session(
     connection_limit: int = 20
 ):
     
-    parsed_url = urllib.parse(base_url)
+    parsed_url = urllib.parse.urlparse(base_url)
     conn = aiohttp.TCPConnector(
         ssl= True if parsed_url.scheme else False,
         use_dns_cache=dns_cache,
