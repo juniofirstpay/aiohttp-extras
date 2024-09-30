@@ -2,7 +2,9 @@ import aiohttp
 import urllib.parse
 import functools
 from typing import Dict, Callable, Awaitable, Any
+from dataclasses import dataclass
 
+@dataclass
 class HTTPSessionConfig:
     name: str
     base_url: str
