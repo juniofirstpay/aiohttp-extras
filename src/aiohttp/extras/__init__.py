@@ -62,6 +62,10 @@ class HTTPSessions:
             return wrapped_async_callable
         
         return delayed_wrapper
+    
+    async def destroy(self):
+        for session in self.__session_mapping.values():
+            await session.close()
             
 
 __all__ = ("HTTPSessionConfig", "HTTPSessions")
